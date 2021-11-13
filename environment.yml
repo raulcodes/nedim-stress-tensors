@@ -1,0 +1,6 @@
+name: nedim-stress-transformation
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - matplotlib
