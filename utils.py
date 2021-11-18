@@ -33,7 +33,6 @@ def parse_unit_vector_input(t):
         if len(matches) > 3 or len(matches) == 0:
             raise Exception('Please enter a valid stress tensor')
         for item in matches:
-            print(item)
             sanitized_value = item[0].replace(" ", "")
             if sanitized_value == '':
                 sanitized_value = "1"
@@ -56,3 +55,11 @@ def display_input(ist, T_x, T_y, T_z, N_1, N_2, N_3):
         {}_i & {}_j & {}_k
     \end{{bmatrix}}""".format(ist[0][0], ist[0][1], ist[0][2], ist[1][0], ist[1][1], ist[1][2], ist[2][0], ist[2][1], ist[2][2])))
     display(Math(r"N1: {} \\N2: {} \\N3: {} \\".format(N_1, N_2, N_3)))
+
+def display_output(ist):
+    display(Markdown("## Result"))
+    display(Latex(r"""\begin{{bmatrix}}
+        {}_i & {}_j & {}_k \\
+        {}_i & {}_j & {}_k \\
+        {}_i & {}_j & {}_k
+    \end{{bmatrix}}""".format(ist[0][0], ist[0][1], ist[0][2], ist[1][0], ist[1][1], ist[1][2], ist[2][0], ist[2][1], ist[2][2])))
